@@ -1,6 +1,6 @@
-// script.js
+// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
         const targetId = this.getAttribute('href').substring(1);
@@ -13,4 +13,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// Add a class to the navigation bar on scroll for a sticky effect
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+        header.classList.add('sticky');
+    } else {
+        header.classList.remove('sticky');
+    }
 });
